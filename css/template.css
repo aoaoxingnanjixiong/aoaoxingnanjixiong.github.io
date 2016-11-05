@@ -1,0 +1,95 @@
+/*body {margin: 0; padding: 0; background-color: linen;}
+    #header {position: relative; min-height: 25px; background-color: #726d67;}
+    #subHeader {position: absolute; top: 25px; width:100%; height: 130px;  background-color: rgba(176, 196, 222, 0.6);}
+    	#subHeaderTextWraper {position: relative; margin: 35px 385px; width: 800px; height: 80px; font-family: "Comic Sans MS", sans-serif; text-shadow: 4px 4px 4px #aaa; 
+        font-size: 56px; text-align: center;}
+	#footer {position: absolute; bottom: 0px; width:100%; height: 25px; background-color: #726d67;}
+   
+   
+
+*/
+/*.header-wrapper{
+	height: 500px;
+	margin: 80px 350px;
+    padding: 0;
+    border-bottom: 2px solid;
+    border-color:pink;
+}*/
+
+
+.menu-list {
+    list-style-type: none;
+    height: 150px;
+    margin: 40px 200px;
+    padding: 0;
+    overflow: hidden;
+    /*background-color: #c0c0c0;*/
+    border-bottom: 2px solid;
+    border-color:#696969;
+}
+
+
+.menu-bar {
+    float: left;
+
+}
+
+.menu-bar a {
+    display: block;
+    font-size: 200%;
+    color: #696969;
+    text-align: center;
+    padding: 55px 16px;
+    text-decoration: none;
+}
+.my-name {
+	display: block;
+	float: right;
+	font-size: 500%;
+	padding: 35px 20px;
+}
+
+li a:hover {
+    background-color: #c0c0c0;
+}
+/*.text-area {
+	margin: 30px 200px;
+	
+	max-width: 300px;
+    height: 300px;
+	border: 2px solid red;
+
+}*/
+.main-body {
+	margin: 30px 200px;
+}
+
+.city {
+   float: left;
+   margin: 50px;
+   padding: 20px;
+   max-width: 40%;
+   height: 100%;
+   border: 1px solid black;
+}
+
+.main-page-photo {
+	/*float: left;*/
+	position: relative;
+	/*margin: 30px 200px;*/
+	width: 80%;
+    height: auto;
+
+}
+.content-header-list {
+    list-style: none;
+}
+.content-header {
+    font-size: 150%;
+
+}
+.content{
+    list-style-type: square;
+    font-size: 130%;
+    margin: 3%;
+}
