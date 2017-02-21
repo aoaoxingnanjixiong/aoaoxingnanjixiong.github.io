@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Copyright 2004 The Apache Software Foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <display-name>Test Tomcat Connection to MySQL DB</display-name>
+    <description>
+      Test Tomcat Connection to mySQL DB
+    </description>
+
+
+<!-- Project 5  -->
+
+<!--	
+<listener>
+        <listener-class> com.onjava.dbcp.DBCPoolingListener</listener-class>
+</listener>
+-->
+
+<!-- This component has a dependency on an external resource-->
+<resource-ref>
+  <description>
+    Resource reference to a factory for java.sql.Connection
+    instances that may be used for talking to a particular
+    database that is configured in the server.xml file.
+  </description>
+  <res-ref-name>
+    jdbc/TestDB
+  </res-ref-name>
+  <res-type>
+    javax.sql.DataSource
+  </res-type>
+  <res-auth>
+    Container
+  </res-auth>
+</resource-ref>
+
+
+  <!-- Define servlets that are included in the example application -->
+
+  <welcome-file-list>
+  <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>fabflixLoginServlet</servlet-name>
+    <servlet-class>LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixLoginServlet</servlet-name>
+    <url-pattern>/homepage</url-pattern>
+  </servlet-mapping>
+
+
+<!--  ************************************************************ -->
+
+    <!-- Require HTTPS for everything except /img (favicon) and /css. -->
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixSearchServlet</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixSearchServlet</servlet-name>
+    <url-pattern>/showMovies</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixSearchServlet</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixSearchServlet</servlet-name>
+    <url-pattern>/browsing</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixSearchTitleServlet</servlet-name>
+    <servlet-class>SearchTitleServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixSearchTitleServlet</servlet-name>
+    <url-pattern>/searchtitle</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixBrowsingServlet2</servlet-name>
+    <servlet-class>BrowsingGenreServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixBrowsingServlet2</servlet-name>
+    <url-pattern>/browsingbygenre</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixBrowsingTitle</servlet-name>
+    <servlet-class>BrowsingTitleServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixBrowsingTitle</servlet-name>
+    <url-pattern>/browsingbytitle</url-pattern>
+  </servlet-mapping>
+
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixShowStars</servlet-name>
+    <servlet-class>ShowStarsServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixShowStars</servlet-name>
+    <url-pattern>/showStars</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixAdvanceSearch</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAdvanceSearch</servlet-name>
+    <url-pattern>/advancesearch</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixAdvance</servlet-name>
+    <servlet-class>AdvanceSearchServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAdvance</servlet-name>
+    <url-pattern>/goAdvanceSearch</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixShopping</servlet-name>
+    <servlet-class>ShoppingCartServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixShopping</servlet-name>
+    <url-pattern>/shoppingCart</url-pattern>
+  </servlet-mapping>
+
+
+
+<!--  ************************************************************ -->
+  <servlet>
+    <servlet-name>fabflixTest</servlet-name>
+    <servlet-class>xiong</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixTest</servlet-name>
+    <url-pattern>/xiong</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+
+  <servlet>
+    <servlet-name>fabflixSearchCart</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixSearchCart</servlet-name>
+    <url-pattern>/readyCart</url-pattern>
+  </servlet-mapping>
+<!--  ************************************************************ -->
+<servlet>
+  <servlet-name>fabflixCheckOut</servlet-name>
+  <servlet-class>CheckOutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>fabflixCheckOut</servlet-name>
+  <url-pattern>/CheckOut</url-pattern>
+</servlet-mapping>
+
+<!--  ************************************************************ -->
+<servlet>
+  <servlet-name>fabflixDashBoard</servlet-name>
+  <servlet-class>DashBoardServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>fabflixDashBoard</servlet-name>
+  <url-pattern>/addstar</url-pattern>
+</servlet-mapping>
+
+<!--  ********************  PROJECT 3**************************************** -->
+<servlet>
+  <servlet-name>fabflixMeta</servlet-name>
+  <servlet-class>MetadataServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>fabflixMeta</servlet-name>
+  <url-pattern>/metadata</url-pattern>
+</servlet-mapping>
+<!--  ************************************************************ -->
+
+<servlet>
+    <servlet-name>FabFlixEmployeeServlet</servlet-name>
+    <servlet-class>EmployeeServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>FabFlixEmployeeServlet</servlet-name>
+    <url-pattern>/modifyDB</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+
+<servlet>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <servlet-class>Employee</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <url-pattern>/_dashboard</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+
+<servlet>
+    <servlet-name>InsertStarServlet</servlet-name>
+    <servlet-class>InsertServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>InsertStarServlet</servlet-name>
+    <url-pattern>/insertStar</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+<servlet>
+    <servlet-name>ProcedureServlet</servlet-name>
+    <servlet-class>StoredProcedure</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ProcedureServlet</servlet-name>
+    <url-pattern>/addMovies</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+<servlet>
+    <servlet-name>addFeatureServlet</servlet-name>
+    <servlet-class>step6</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>addFeatureServlet</servlet-name>
+    <url-pattern>/addFeatures</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+<servlet>
+    <servlet-name>FReportsReadmeServlet</servlet-name>
+    <servlet-class>ReportsReadmeServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>FReportsReadmeServlet</servlet-name>
+    <url-pattern>/reports/readme</url-pattern>
+  </servlet-mapping>
+
+<!--  ************************************************************ -->
+<servlet>
+    <servlet-name>PReportsReadmeServlet</servlet-name>
+    <servlet-class>ParsingReportsServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>PReportsReadmeServlet</servlet-name>
+    <url-pattern>/reports/xml_parsing_optimization</url-pattern>
+  </servlet-mapping>
+
+
+<!--  *************************** PROJECT 4 **************************** -->
+  <servlet>
+    <servlet-name>fabflixAutocompletionSearch</servlet-name>
+    <servlet-class>SearchServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAutocompletionSearch</servlet-name>
+    <url-pattern>/autocompletionsearch</url-pattern>
+  </servlet-mapping>
+
+
+<!--  *************************** PROJECT 4 **************************** -->
+  <servlet>
+    <servlet-name>fabflixAutocompletionSearchServlet</servlet-name>
+    <servlet-class>AutocompletionServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAutocompletionSearchServlet</servlet-name>
+    <url-pattern>/autocompleteTitleSearch</url-pattern>
+  </servlet-mapping>
+
+<!--  *************************** PROJECT 4 **************************** -->
+  <servlet>
+    <servlet-name>fabflixIdSearchServlet</servlet-name>
+    <servlet-class>SearchIdServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixIdSearchServlet</servlet-name>
+    <url-pattern>/searchbyid</url-pattern>
+  </servlet-mapping>
+
+
+<!--  *************************** PROJECT 4 **************************** -->
+  <servlet>
+    <servlet-name>fabflixAppLogin</servlet-name>
+    <servlet-class>AppLoginServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAppLogin</servlet-name>
+    <url-pattern>/applogin</url-pattern>
+  </servlet-mapping>
+
+<!--  *************************** PROJECT 4 **************************** -->
+  <servlet>
+    <servlet-name>fabflixAppSearchTitle</servlet-name>
+    <servlet-class>AppSearchTitleServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAppSearchTitle</servlet-name>
+    <url-pattern>/appsearchtitle</url-pattern>
+  </servlet-mapping>
+
+<!--  *************************** PROJECT 4 **************************** -->
+  <servlet>
+    <servlet-name>fabflixAppSimpleMoviePage</servlet-name>
+    <servlet-class>AppSearchMovieIdServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAppSimpleMoviePage</servlet-name>
+    <url-pattern>/appsinglemoviepage</url-pattern>
+  </servlet-mapping>
+
+<!--  *************************** PROJECT 4 **************************** -->
+  <servlet>
+    <servlet-name>fabflixAppStarPage</servlet-name>
+    <servlet-class>AppSearchStarIdServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fabflixAppStarPage</servlet-name>
+    <url-pattern>/appstarpage</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+
+</web-app>

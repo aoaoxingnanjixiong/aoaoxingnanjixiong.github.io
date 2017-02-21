@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='ISO-8859-1'?> 
+<!-- Movies MAIN.XML file --> 
+<!-- MASTER BASE File of Movies [varese]MyDocs/mov/xml/mainsnnn.xml --> 
+<!-- This file is copyright 1987 to 2003 by Gio Wiederhold.--> 
+<!-- last updated 19July 2004 -->
+<!-- Usage is freely granted as long as the copyright is acknowledged.--> 
+<!-- size about 12 000 movies, by about 3000 directors. --> 
+<!-- See Remakes.xml for relationships between movie contents. --> 
+<!-- Format Information --> 
+<!-- Major sections --> 
+<!-- 1. HITCHCOCK movies --> 
+<!-- 2. Other Movies, director by director. -->
+<!-- the Directors appear by year of first film by director, and then alphabetically by director code --> 
+<!-- The set of directors starting each year are preceded by a comment -->
+<!-- All films by one director appear in chronological sequence -->
+<!-- All movies have a unique code, composed of the director code and an  sequence number --> 
+<!-- Missing sequence numbers may mean unlisted films or just incomplete information. -->
+<!-- The default initial sequence number for the films of a director is 10. -->
+<!-- All entries have been validated with Internet Explorer default XSLT -->
+
+<movies> 
+   <directorfilms>
+      <dirname>directorDogge</dirname>
+      <films>
+         <film>
+            <t>movie1</t>
+            <year>1</year>
+            <cat>cat1</cat>
+         </film>
+         <film>
+            <t>movie2</t>
+            <year>2</year>
+            <cat>cat2</cat>
+         </film>
+         <film>
+            <t>movie3</t>
+            <year>3</year>
+            <cat>cat3</cat>
+         </film>
+         <film>
+            <t>movie4</t>
+            <year>4</year>
+         </film>
+      </films>
+   </directorfilms>
+
+
+   <directorfilms>
+      <dirname>directorXiongge</dirname>
+      <films>
+         <film>
+            <t>movie5</t>
+            <year>5</year>
+         </film>
+         <film>
+            <t>movie6</t>
+            <year>6</year>
+         </film>
+         <film>
+            <t>movie7</t>
+            <year>7</year>
+         </film>
+      </films>
+   </directorfilms>
+
+
+</movies>

@@ -1,0 +1,21 @@
+
+ 						Task 3 -- XML Parsing Report
+
+IMPORTANT: In order to run the parsing program, you need to use our createtable.sql to create the schema. The only difference between our shema and the previous one is that the data type of dob in stars table. We are using type "varchar" instead of "date" in order to parse the data. 
+
+In this task, we are using SAX parsing to parse the data from xml and insert to database. The two techniques that we used in the parsing is:
+
+1. cache: the program can memorize the ID of the genre, movie and star in local without accessing DB to get those ID information. 
+
+2. auto commit: we closed the auto commit to reduce the overhead. Instead, we only commit once.
+
+So after the two optimization, we observed a siginificant time reduce, espcially with using cache. Parsing the given xml files, it only takes 5 seconds.
+
+
+
+
+ 
+Read Authors:
+* Hannah Zhao
+* Ying Liu
+* Sige Chen

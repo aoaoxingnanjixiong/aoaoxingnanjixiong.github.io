@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check Out</title>
+	<style type="text/css">
+		form{
+			text-align: center;
+		}
+		input{
+			width: 200px;
+			height: 30px;
+		}
+		body{
+                        margin-top: 150px;
+		}
+	</style>
+</head>
+<body>
+<h1 align="center">Order Information:</h1>
+<form action="/fabflix/CheckOut" method="POST">
+	Card Number:<br> <input type="text" name="inputcardnumber"></input><br>
+	Expiration Date:<br> <input type="text" name="expirationdate"></input><br>
+	First Name:<br> <input type="text" name="inputfirstname"></input><br>
+	Last Name:<br> <input type="text" name="inputlastname"></input><br><br>
+	<input type="submit" value="Check Out"></input>
+</form>
+<br> <form ACTION = "/fabflix/CheckOut" method="POST">
+        <center><input type="SUBMIT" name = "homehome" value = "HomePage"></center>
+        </form>
+<br>
+
+</body>
+</html>

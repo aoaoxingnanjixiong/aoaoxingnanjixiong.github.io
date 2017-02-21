@@ -1,0 +1,12 @@
+javac -classpath .:./mysql-connector-java-5.0.8-bin.jar RunParsing.java
+
+java -classpath .:./mysql-connector-java-5.0.8-bin.jar RunParsing
+
+truncate creditcards;
+truncate customers;
+truncate genres;
+truncate genres_in_movies;
+truncate movies;
+truncate sales;
+truncate stars;
+truncate stars_in_movies;

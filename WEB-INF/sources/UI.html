@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Info</title>
+	<style type="text/css">
+	form{
+		text-align: center;
+	}
+	.block{
+		height: 500px;
+  		width: 200px;
+		display: inline-block;
+		float: center;
+	}
+	.container {
+		width: 100%;
+  		margin: auto;
+  		position: relative;
+  		text-align:center;
+}
+	</style>
+
+</head>
+<body>
+<div class="container">
+<div class="block">
+
+<h1 align="center">Add Star</h1>
+<form ACTION="/fabflix/addstar" METHOD="GET">
+	First Name:<br> <input type="text" name="inputfirstname"></input><br>
+	Last Name:<br> <input type="text" name="inputlastname"></input><br>
+	Data of Birth:<br> <input type="text" name="inputdob"></input><br>
+	Photo URL:<br> <input type="text" name="inputphotourl"></input><br><br>
+	<input type="submit" value="Submit"></input>
+</form>
+</div>
+
+<div class="block" id="metadata">
+<br><br><br><br><br>
+<form action="/fabflix" METHOD = "GET">
+         <input type="submit" value="Go Login Page"></input>
+</form>
+<br><br><br><br>
+
+
+<form ACTION="/fabflix/metadata" METHOD="GET">
+<input type="submit" value="Metadata"></input> 
+</form>
+</div>
+
+<div class="block">
+<h1 align="center">Add Movie</h1>
+<form action="/fabflix/addMovies" method="GET">
+	Title:<br> <input type="text" name="inputtitle"></input><br>
+	Year:<br> <input type="text" name="inputyear"></input><br>
+	Director:<br> <input type="text" name="inputdirector"></input><br>
+	Banner URL:<br> <input type="text" name="inputbannerurl"></input><br>
+	Trailer URL:<br> <input type="text" name="inputtrailerurl"></input><br>
+	Star Last Name:<br> <input type="text" name="inputstarlastname"></input><br>
+	Genre:<br> <input type="text" name="inputgenre"></input><br><br>
+	<input type="submit" value="Submit"></input>
+</form>
+</div>
+
+<div class="block">
+<h1 align="center">Add Movie Info</h1>
+<form action="/fabflix/addFeatures" METHOD = "GET">
+	Movie Title:<br> <input type="text" name="inputtitle2"></input><br>
+	Genre:<br> <input type="text" name="inputgenre"></input><br>
+	Star_Last_Name:<br> <input type="text" name="inputstarlastname"></input><br><br>
+	<input type="submit" value="Submit"></input>
+</form>
+	
+</div>
+
+</div>
+
+</body>
+</html>
+

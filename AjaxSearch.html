@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+
+<script language="javascript" type="text/javascript">
+<!--
+//Browser Support Code
+function ajaxFunction(){
+        var ajaxRequest;  // The variable that makes Ajax possible!
+
+        var a = document.getElementById('bbb');
+        console.log(a.value);
+        try{
+                // Opera 8.0+, Firefox, Safari
+                ajaxRequest = new XMLHttpRequest();
+        } catch (e){
+                // Internet Explorer Browsers
+                try{
+                        ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                        try{
+                                ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                        } catch (e){
+                                // Something went wrong
+                                alert("Your browser broke!");
+                                return false;
+                        }
+                }
+        }
+        // Create a function that will receive data sent from the server
+        ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+
+			//var ulist = document.getElementById("aaa");
+  			//var newItem = document.createElement("li");
+  			//var alink = document.createElement("a");	
+
+			$('ul').empty()
+
+			var result =  ajaxRequest.responseText; //string contains all movie title from server
+			var result_array = [];
+			result_array = result.split(',');
+			for (var i = 0; i < result_array.length-1; i++){
+				var ulist = document.getElementById("aaa");
+                        	var newItem = document.createElement("li");
+                        	var alink = document.createElement("a");  
+		
+				alink.textContent = result_array[i];
+				alink.setAttribute('href', "searchtitle?mtitle="+result_array[i]);
+				newItem.appendChild(alink);
+				ulist.appendChild(newItem);
+
+			}
+			document.getElementsByClassName("results")[0].style.display = "block";
+
+//                        document.getElementById("text1").value = result;
+                }
+        }
+        ajaxRequest.open("GET", "/fabflix/autocompleteTitleSearch?username="+a.value, true);
+        ajaxRequest.send();
+}
+
+//-->
+</script>
+
+<body>
+	<section class="main">
+	 <form class="search" method="post" action="index.html" >
+		 <input type="text" id="bbb" name="q" onkeyup="ajaxFunction()" >
+		 <ul id="aaa" class="results" >
+		 </ul>
+	 </form>
+	</section>
+
+</body>
+
+
+<!--
+<form name='myForm'>
+Item Name: <input type='text' id='bbb' onkeyup="ajaxFunction();" name='username' /> <br />
+xiong: <input type='text' name='daxiong' />
+</form>
+<textarea rows="13" cols="100"  name='time' id = "text1">This text gets removed</textarea>
+//-->
+
+</body>
+</html>
+~                           
+
